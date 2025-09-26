@@ -1,0 +1,53 @@
+/* Light custom styles to complement Tailwind */
+
+:root {
+  --ring: 0 0 0 3px rgba(59, 130, 246, 0.35);
+}
+
+/* Buttons used for actions */
+.action-btn {
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.55rem;
+  transition: transform 0.08s ease;
+}
+.action-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* Modal root: show/hide */
+#modalRoot.show {
+  display: flex;
+}
+
+/* Focus ring for accessibility */
+button:focus, input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+/* Table zebra striping */
+#txTableBody tr:nth-child(odd) {
+  background: rgba(0,0,0,0.02);
+}
+
+/* Toast fade */
+#toast.show {
+  display: block;
+  animation: toast-pop 2.2s ease forwards;
+}
+
+@keyframes toast-pop {
+  0% { opacity: 0; transform: translate(-50%, 10px); }
+  10% { opacity: 1; transform: translate(-50%, 0); }
+  85% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 0); }
+}
+
+/* Reduced motion */
+.reduce-motion * {
+  animation: none !important;
+  transition: none !important;
+}
+
+
